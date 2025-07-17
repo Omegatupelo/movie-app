@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
     release_date,
     overview
   } = movie;
-
+// this is a comment//
   const formatDate = (dateString) => {
     if (!dateString) return 'Unknown';
     return new Date(dateString).getFullYear();
