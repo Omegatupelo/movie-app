@@ -115,3 +115,82 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.movie-poster-container {
+  position: relative;              /* Position for absolute children */
+  overflow: hidden;                /* Hide overflow content */
+  border-radius: 10px;             /* Rounded corners for poster */
+  margin-bottom: 15px;             /* Space between poster and info */
+}
+/* Movie Card */
+.movie-card {
+  background: rgba(255, 255, 255, 0.05); /* Semi-transparent white background */
+  border-radius: 15px;             /* Rounded corners */
+  overflow: hidden;                /* Hide overflow content */
+  transition: all 0.3s ease;       /* Smooth transition for hover effects */
+  text-decoration: none;           /* Remove link underline */
+  color: inherit;                  /* Inherit text color from parent */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  backdrop-filter: blur(10px);     /* Apply blur effect to background */
+  padding: 15px;                   /* Internal padding around card content */
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);     /* Move card up on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+  border-color: rgba(255, 255, 255, 0.5); /* Brighter border on hover */
+}
+
+.movie-poster {
+  width: 100%;                     /* Full width of container */
+  height: 400px;                   /* Fixed height for consistency */
+  object-fit: cover;               /* Cover container while maintaining aspect ratio */
+  transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.05);          /* Slightly scale up poster on hover */
+}
+
+.movie-overlay {
+  position: absolute;              /* Position absolutely within poster container */
+  top: 0;                         /* Position at top */
+  left: 0;                        /* Position at left */
+  right: 0;                       /* Position at right */
+  bottom: 0;                      /* Position at bottom */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent); /* Dark gradient overlay */
+  opacity: 0;                     /* Initially invisible */
+  transition: opacity 0.3s ease;  /* Smooth opacity transition */
+  display: flex;                  /* Use flexbox layout */
+  align-items: flex-end;          /* Align content to bottom */
+  padding: 1.5rem;                /* Internal padding */
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;                     /* Show overlay on hover */
+}
+
+.movie-overview {
+  color: #ffffff !important;       /* Force white color for overview text */
+  font-size: 0.9rem;              /* Font size for overview */
+  line-height: 1.4;               /* Line height for readability */
+  display: -webkit-box;           /* Use webkit box for line clamping */
+  -webkit-line-clamp: 4;          /* Limit to 4 lines */
+  -webkit-box-orient: vertical;   /* Vertical box orientation */
+  overflow: hidden;               /* Hide overflow text */
+}
+
+.movie-info {
+  padding: 0;                     /* No padding since card has padding */
+}
+
+.movie-title {
+  font-size: 1.2rem;              /* Font size for movie title */
+  font-weight: 600;               /* Semi-bold font weight */
+  margin-bottom: 0.75rem;         /* Bottom margin */
+  line-height: 1.3;               /* Line height for title */
+  display: -webkit-box;           /* Use webkit box for line clamping */
+  -webkit-line-clamp: 2;          /* Limit to 2 lines */
+  -webkit-box-orient: vertical;   /* Vertical box orientation */
+  overflow: hidden;               /* Hide overflow text */
+  color: #ffffff;                 /* White color for title */
+}
